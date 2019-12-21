@@ -1,4 +1,4 @@
-strs_array_array = [
+strs_array = [
   ['+', "ミミミン"],
   ['-', "！"],
   ['[', "ウサウサウーサ"],
@@ -22,12 +22,9 @@ def replaceString(f,strs_array)
   f.puts body
 end
 
-files = Dir.glob('abe.nana')
-
-files.each do |item|
-  open(item,"r+") {|f|
-    f.flock(File::LOCK_EX)
-    replaceString(f, strs_array)
-    f.truncate(f.tell)
-  }
+File.open(ARGV[0], "r+") do |f|
+  f.flock(File::LOCK_EX)
+  replaceString(f, strs_array)
+  f.truncate(f.tell)
 end
+
