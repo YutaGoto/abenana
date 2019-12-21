@@ -4,14 +4,14 @@ require "bundler/setup"
 require "r-fxxk"
 
 class Nana < Brainfuck
-  inc "ミミミン"
-  dec "！"
-  opn "ウサウサウーサ"
-  cls "ウーサミン"
-  nxt "ウサミン"
-  prv "ナナー"
-  put "うードッカーン"
-  get "メルヘンチェーンジ"
+  inc "ミミミン" # +
+  dec "！" # -
+  opn "ウサウサウーサ" # [
+  cls "ウーサミン" # ]
+  nxt "ウサミン" # >
+  prv "ナナー" # <
+  put "うードッカーン" # .
+  get "メルヘンチェーンジ" # ,
 end
 
 puts Nana.new.fuck(ARGF.read)
